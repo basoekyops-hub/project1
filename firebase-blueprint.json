@@ -1,0 +1,316 @@
+{
+  "entities": {
+    "Pengawas": {
+      "title": "Pengawas",
+      "description": "Profil resmi pengawas sekolah pembina",
+      "type": "object",
+      "properties": {
+        "nama": { "type": "string" },
+        "gelar": { "type": "string" },
+        "nip": { "type": "string" },
+        "pangkatGolongan": { "type": "string" },
+        "jabatan": { "type": "string" },
+        "wilayahKerja": { "type": "string" },
+        "kecamatan": { "type": "string" },
+        "kabupaten": { "type": "string" },
+        "provinsi": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "noHp": { "type": "string" },
+        "foto": { "type": "string" },
+        "riwayatPendidikan": { "type": "string" },
+        "pengalaman": { "type": "string" },
+        "kompetensi": { "type": "string" },
+        "tugasFungsi": { "type": "string" },
+        "peranPengawas": { "type": "string" }
+      },
+      "required": ["nama"]
+    },
+    "PengaturanWebsite": {
+      "title": "PengaturanWebsite",
+      "description": "Identitas dinamis website dan konfigurasi kontak pengawas",
+      "type": "object",
+      "properties": {
+        "namaPortal": { "type": "string" },
+        "subjudul": { "type": "string" },
+        "namaPengawas": { "type": "string" },
+        "fotoPengawas": { "type": "string" },
+        "nipPengawas": { "type": "string" },
+        "jabatan": { "type": "string" },
+        "jenjang": { "type": "string" },
+        "kecamatan": { "type": "string" },
+        "kabupaten": { "type": "string" },
+        "provinsi": { "type": "string" },
+        "email": { "type": "string" },
+        "telepon": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "alamat": { "type": "string" },
+        "logo": { "type": "string" },
+        "favicon": { "type": "string" },
+        "deskripsi": { "type": "string" },
+        "footer": { "type": "string" },
+        "facebook": { "type": "string" },
+        "instagram": { "type": "string" },
+        "youtube": { "type": "string" },
+        "tiktok": { "type": "string" },
+        "mapsUrl": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" }
+      },
+      "required": ["namaPortal", "namaPengawas"]
+    },
+    "Sekolah": {
+      "title": "Sekolah",
+      "description": "Data satuan pendidikan TK/SD binaan pengawas",
+      "type": "object",
+      "properties": {
+        "nama": { "type": "string" },
+        "npsn": { "type": "string" },
+        "jenjang": { "type": "string" },
+        "status": { "type": "string" },
+        "alamat": { "type": "string" },
+        "desaKelurahan": { "type": "string" },
+        "kecamatan": { "type": "string" },
+        "kabupaten": { "type": "string" },
+        "provinsi": { "type": "string" },
+        "foto": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "mapsUrl": { "type": "string" },
+        "kepalaSekolahNama": { "type": "string" },
+        "jumlahGuru": { "type": "number" },
+        "jumlahSiswa": { "type": "number" },
+        "telepon": { "type": "string" },
+        "email": { "type": "string" },
+        "website": { "type": "string" }
+      },
+      "required": ["nama", "npsn", "jenjang", "status", "alamat"]
+    },
+    "VisiMisi": {
+      "title": "VisiMisi",
+      "description": "Visi, misi, tujuan, dan program unggulan sekolah binaan",
+      "type": "object",
+      "properties": {
+        "sekolahId": { "type": "string" },
+        "visi": { "type": "string" },
+        "misi": { "type": "string" },
+        "tujuan": { "type": "string" },
+        "programUnggulan": { "type": "string" }
+      },
+      "required": ["sekolahId"]
+    },
+    "StrukturOrganisasi": {
+      "title": "StrukturOrganisasi",
+      "description": "Bagan pengelola dan personil struktur organisasi sekolah",
+      "type": "object",
+      "properties": {
+        "sekolahId": { "type": "string" },
+        "nama": { "type": "string" },
+        "jabatan": { "type": "string" },
+        "bagian": { "type": "string" },
+        "foto": { "type": "string" },
+        "urutan": { "type": "number" },
+        "keterangan": { "type": "string" }
+      },
+      "required": ["sekolahId", "nama", "jabatan"]
+    },
+    "Fasilitas": {
+      "title": "Fasilitas",
+      "description": "Sarana dan prasarana penunjang kegiatan belajar sekolah",
+      "type": "object",
+      "properties": {
+        "sekolahId": { "type": "string" },
+        "nama": { "type": "string" },
+        "deskripsi": { "type": "string" },
+        "foto": { "type": "string" },
+        "kondisi": { "type": "string" },
+        "jumlah": { "type": "number" },
+        "unit": { "type": "string" }
+      },
+      "required": ["sekolahId", "nama"]
+    },
+    "Keunggulan": {
+      "title": "Keunggulan",
+      "description": "Inovasi, keunggulan lokal, dan program distingtif sekolah",
+      "type": "object",
+      "properties": {
+        "sekolahId": { "type": "string" },
+        "judul": { "type": "string" },
+        "kategori": { "type": "string" },
+        "deskripsi": { "type": "string" },
+        "icon": { "type": "string" }
+      },
+      "required": ["sekolahId", "judul", "kategori"]
+    },
+    "KepalaSekolah": {
+      "title": "KepalaSekolah",
+      "description": "Riwayat dan sambutan kepala sekolah pembina",
+      "type": "object",
+      "properties": {
+        "sekolahId": { "type": "string" },
+        "nama": { "type": "string" },
+        "nip": { "type": "string" },
+        "periode": { "type": "string" },
+        "status": { "type": "string" },
+        "foto": { "type": "string" },
+        "keterangan": { "type": "string" },
+        "sambutan": { "type": "string" }
+      },
+      "required": ["sekolahId", "nama"]
+    },
+    "Guru": {
+      "title": "Guru",
+      "description": "Data dewan pendidik dan tenaga kependidikan",
+      "type": "object",
+      "properties": {
+        "sekolahId": { "type": "string" },
+        "nama": { "type": "string" },
+        "nip": { "type": "string" },
+        "nuptk": { "type": "string" },
+        "jabatan": { "type": "string" },
+        "mapel": { "type": "string" },
+        "pendidikan": { "type": "string" },
+        "statusKepegawaian": { "type": "string" },
+        "email": { "type": "string" },
+        "foto": { "type": "string" },
+        "tampilkanPublik": { "type": "boolean" }
+      },
+      "required": ["sekolahId", "nama", "jabatan"]
+    },
+    "Prestasi": {
+      "title": "Prestasi",
+      "description": "Rekam jejak capaian lomba dan kejuaraan sekolah/siswa/guru",
+      "type": "object",
+      "properties": {
+        "sekolahId": { "type": "string" },
+        "namaPrestasi": { "type": "string" },
+        "tingkat": { "type": "string" },
+        "tahun": { "type": "number" },
+        "bidang": { "type": "string" },
+        "peraih": { "type": "string" },
+        "keterangan": { "type": "string" },
+        "foto": { "type": "string" }
+      },
+      "required": ["namaPrestasi", "tingkat", "tahun", "peraih"]
+    },
+    "Berita": {
+      "title": "Berita",
+      "description": "Warta kegiatan supervisi, pendampingan dan artikel edukasi",
+      "type": "object",
+      "properties": {
+        "sekolahId": { "type": "string" },
+        "judul": { "type": "string" },
+        "slug": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "ringkasan": { "type": "string" },
+        "konten": { "type": "string" },
+        "penulis": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "kategori": { "type": "string" },
+        "statusPublish": { "type": "boolean" },
+        "featured": { "type": "boolean" }
+      },
+      "required": ["judul", "slug", "konten", "kategori"]
+    },
+    "Pengumuman": {
+      "title": "Pengumuman",
+      "description": "Pemberitahuan resmi kepengawasan dan kedinasan",
+      "type": "object",
+      "properties": {
+        "judul": { "type": "string" },
+        "isi": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "prioritas": { "type": "string" },
+        "statusPublish": { "type": "boolean" },
+        "lampiranUrl": { "type": "string" }
+      },
+      "required": ["judul", "isi"]
+    },
+    "Galeri": {
+      "title": "Galeri",
+      "description": "Dokumentasi foto dan video kegiatan kepengawasan",
+      "type": "object",
+      "properties": {
+        "sekolahId": { "type": "string" },
+        "judul": { "type": "string" },
+        "kategori": { "type": "string" },
+        "jenis": { "type": "string" },
+        "url": { "type": "string" },
+        "deskripsi": { "type": "string" },
+        "tanggal": { "type": "string" }
+      },
+      "required": ["judul", "url", "kategori"]
+    },
+    "Kontak": {
+      "title": "Kontak",
+      "description": "Pesan konsultasi dan pertanyaan dari masyarakat/sekolah",
+      "type": "object",
+      "properties": {
+        "nama": { "type": "string" },
+        "email": { "type": "string" },
+        "telepon": { "type": "string" },
+        "subjek": { "type": "string" },
+        "pesan": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["nama", "email", "subjek", "pesan"]
+    }
+  },
+  "firestore": {
+    "/pengawas/{pengawasId}": {
+      "schema": "Pengawas",
+      "description": "Profil pengawas sekolah"
+    },
+    "/pengaturanWebsite/{settingId}": {
+      "schema": "PengaturanWebsite",
+      "description": "Pengaturan identitas website"
+    },
+    "/sekolah/{sekolahId}": {
+      "schema": "Sekolah",
+      "description": "Daftar sekolah binaan"
+    },
+    "/visiMisi/{id}": {
+      "schema": "VisiMisi",
+      "description": "Visi misi sekolah"
+    },
+    "/strukturOrganisasi/{id}": {
+      "schema": "StrukturOrganisasi",
+      "description": "Struktur organisasi sekolah"
+    },
+    "/fasilitas/{id}": {
+      "schema": "Fasilitas",
+      "description": "Fasilitas sekolah"
+    },
+    "/keunggulan/{id}": {
+      "schema": "Keunggulan",
+      "description": "Keunggulan sekolah"
+    },
+    "/kepalaSekolah/{id}": {
+      "schema": "KepalaSekolah",
+      "description": "Kepala sekolah"
+    },
+    "/guru/{id}": {
+      "schema": "Guru",
+      "description": "Guru dan tenaga kependidikan"
+    },
+    "/prestasi/{id}": {
+      "schema": "Prestasi",
+      "description": "Prestasi sekolah dan murid"
+    },
+    "/berita/{id}": {
+      "schema": "Berita",
+      "description": "Berita dan warta kegiatan"
+    },
+    "/pengumuman/{id}": {
+      "schema": "Pengumuman",
+      "description": "Pengumuman resmi"
+    },
+    "/galeri/{id}": {
+      "schema": "Galeri",
+      "description": "Galeri media foto dan video"
+    },
+    "/kontak/{id}": {
+      "schema": "Kontak",
+      "description": "Pesan kontak masuk"
+    }
+  }
+}

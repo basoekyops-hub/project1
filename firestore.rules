@@ -1,0 +1,79 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Health / connection test document
+    match /test/{id} {
+      allow read: if true;
+    }
+
+    // Koleksi profil pengawas & pengaturan
+    match /pengawas/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /pengaturanWebsite/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // Koleksi data satuan pendidikan
+    match /sekolah/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /visiMisi/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /strukturOrganisasi/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /fasilitas/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /keunggulan/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /kepalaSekolah/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /guru/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /prestasi/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // Koleksi publikasi warta & media
+    match /berita/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /pengumuman/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /galeri/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    // Koleksi kontak masuk masyarakat (publik dapat kirim pesan, hanya admin yang dapat membaca/mengelola)
+    match /kontak/{id} {
+      allow create: if request.resource.data.nama is string &&
+                        request.resource.data.email is string &&
+                        request.resource.data.pesan is string;
+      allow read, update, delete: if isSignedIn();
+    }
+  }
+}

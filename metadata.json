@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Portal Pengawas Sekolah",
+  "description": "Portal resmi Pengawas Sekolah TK/SD untuk informasi pendampingan, dokumentasi, sekolah binaan, dan pengembangan mutu satuan pendidikan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

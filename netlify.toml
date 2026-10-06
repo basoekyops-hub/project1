@@ -1,0 +1,19 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Redirect semua rute frontend ke index.html agar tidak 404 saat refresh di Netlify
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# PANDUAN PENTING UNTUK BACKEND API:
+# Aplikasi ini adalah Full-Stack (memerlukan server Node.js/Express untuk database, autentikasi, dan API /api/*).
+# Jika Anda men-deploy backend di Render / Railway / Cloud Run:
+# Anda dapat menambahkan rewrite proxy API di Netlify dengan menghapus tanda komentar di bawah ini:
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://URL-BACKEND-ANDA.onrender.com/api/:splat"
+#   status = 200
+#   force = true
